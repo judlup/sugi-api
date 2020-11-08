@@ -19,10 +19,9 @@ use App\Http\Controllers\API\ProductoController;
 
 Route::post('register', [RegisterController::class, 'register']);
 Route::post('login', [RegisterController::class, 'login']);
+Route::get('unauthorized', [RegisterController::class,'unauthorized']);
 
 Route::middleware('auth:api')->group( function () {
     Route::resource('products', ProductoController::class);
 });
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+
